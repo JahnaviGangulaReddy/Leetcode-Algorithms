@@ -1,0 +1,22 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int i;
+        int fin=0;
+        System.out.println(nums.length);
+        for(i=0;i<=nums.length-1;i++)
+        {
+            if(target >nums[nums.length - 1])
+            {
+                return (nums.length);
+            }
+            if(nums[i] == target)
+            { 
+                fin = i;
+                break;
+            }
+            else if (target > nums[i]&&target<nums[i+1])
+                fin= i+1;
+        }   
+        return fin;
+    }
+}
